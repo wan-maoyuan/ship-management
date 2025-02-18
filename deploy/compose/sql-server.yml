@@ -1,0 +1,17 @@
+name: "sql_server"
+
+services:
+  sql_server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql_server
+    restart: always
+    network_mode: bridge
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=smart_ship123..
+      - MSSQL_SA_PASSWORD=smart_ship123..
+    volumes:
+      - /home/wanmaoyuan/docker/sql_server:/var/opt/mssql
+
